@@ -5,7 +5,7 @@ const port = process.env.PORT || 8000;
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const Item = require("./models/item");
-const itemData = require("./utilities/itemData")
+const itemData = require("./utilities/itemData");
 
 //mongoose connection
 mongoose.connect(process.env.MONGO_URI);
@@ -26,9 +26,13 @@ app.get("/items/seed", async (req, res) => {
   await Item.deleteMany({});
   // Create a list of pokemon into our database
   await Item.create(itemData);
-  res.redirect("/item");
+  res.redirect("/");
+});
+
+app.get("/", (req, res) => {
+  res.render("Index");
 });
 
 app.listen(port, () => {
-    console.log("listening on port", port);
-  });  
+  console.log("listening on port", port);
+});
