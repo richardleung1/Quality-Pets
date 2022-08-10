@@ -35,6 +35,18 @@ app.get("/", (req, res) => {
   res.render("Index");
 });
 
+// New route
+app.get("/items/new", (req, res) => {
+  res.render("New");
+});
+
+// Post route
+app.post("/items/", (req, res) => {
+  Item.create(req.body, (error, item) => {
+    res.redirect("/");
+  });
+});
+
 // Show route
 app.get("/items/:id", (req, res) => {
   Item.findById(req.params.id, (error, foundItem) => {
