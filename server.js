@@ -21,6 +21,7 @@ app.use(express.static("public"));
 app.set("view engine", "jsx");
 app.engine("jsx", require("express-react-views").createEngine());
 
+// Seed route
 app.get("/items/seed", async (req, res) => {
   //Clear database
   await Item.deleteMany({});
@@ -29,18 +30,33 @@ app.get("/items/seed", async (req, res) => {
   res.redirect("/");
 });
 
+// Index route
 app.get("/", (req, res) => {
   res.render("Index");
 });
 
-app.get("/:animal/:category", (req, res) => {
-  Item.find({ animal: req.params.animal, category: req.params.category }, (error, foundItems) => {
-    res.render("Category", {
-      items: foundItems,
+// Show route
+app.get("/items/:id", (req, res) => {
+  Item.findById(req.params.id, (error, foundItem) => {
+    res.render("Show", {
+      item: foundItem,
     });
   });
 });
 
+// Category route
+app.get("/:animal/:category", (req, res) => {
+  Item.find(
+    { animal: req.params.animal, category: req.params.category },
+    (error, foundItems) => {
+      res.render("Category", {
+        items: foundItems,
+      });
+    }
+  );
+});
+
+// Animal route
 app.get("/:animal", (req, res) => {
   Item.find({ animal: req.params.animal }, (error, foundItems) => {
     res.render("Animal", {
