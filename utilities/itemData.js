@@ -5,7 +5,7 @@ const itemData = [
     price: 24.99,
     category: "Dry Food",
     stock: 1,
-    animal: "cats",
+    animal: "Cats",
     size: "3 lb",
   },
 ];

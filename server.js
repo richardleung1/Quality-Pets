@@ -33,6 +33,14 @@ app.get("/", (req, res) => {
   res.render("Index");
 });
 
+app.get("/:animal/:category", (req, res) => {
+  Item.find({ animal: req.params.animal, category: req.params.category }, (error, foundItems) => {
+    res.render("Category", {
+      items: foundItems,
+    });
+  });
+});
+
 app.get("/:animal", (req, res) => {
   Item.find({ animal: req.params.animal }, (error, foundItems) => {
     res.render("Animal", {
