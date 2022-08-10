@@ -21,9 +21,15 @@ class Show extends React.Component {
             <img src={item.img} alt="" />
             <br />
             <ul>
-                <li>Price: {item.price}</li>
-                <li>Size: {item.size}</li>
-                <li>Stock: {item.stock}</li>
+              <li>Price: ${item.price}</li>
+              <li>Size: {item.size}</li>
+              {(() => {
+                if (item.stock === 0) {
+                  return <li>Stock: Out of Stock</li>;
+                } else {
+                  return <li>Stock: {item.stock}</li>;
+                }
+              })()}
             </ul>
           </div>
         </body>

@@ -44,6 +44,35 @@ app.get("/items/:id", (req, res) => {
   });
 });
 
+// Edit route
+app.get("/items/:id/edit", (req, res) => {
+  Item.findById(req.params.id, (error, foundItem) => {
+    if (!error) {
+      res.render("Edit", {
+        item: foundItem,
+      });
+    } else {
+      res.send({
+        message: error.message,
+      });
+    }
+  });
+});
+
+// Update route
+app.put("/items/:id", (req, res) => {
+  Item.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    {
+      new: true,
+    },
+    (error, updatedItem) => {
+      res.redirect(`/items/${req.params.id}`);
+    }
+  );
+});
+
 // Category route
 app.get("/:animal/:category", (req, res) => {
   Item.find(
