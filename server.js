@@ -24,13 +24,21 @@ app.engine("jsx", require("express-react-views").createEngine());
 app.get("/items/seed", async (req, res) => {
   //Clear database
   await Item.deleteMany({});
-  // Create a list of pokemon into our database
+  // Create a list of items into our database
   await Item.create(itemData);
   res.redirect("/");
 });
 
 app.get("/", (req, res) => {
   res.render("Index");
+});
+
+app.get("/:animal", (req, res) => {
+  Item.find({ animal: req.params.animal }, (error, foundItems) => {
+    res.render("Animal", {
+      items: foundItems,
+    });
+  });
 });
 
 app.listen(port, () => {
