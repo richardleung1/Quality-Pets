@@ -5,7 +5,7 @@ class New extends React.Component {
     return (
       <html lang="en">
         <head>
-          <title>New Item</title>
+          <title>Quality Pets</title>
           <link rel="stylesheet" href="./css/style.css" />
           <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"

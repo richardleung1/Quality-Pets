@@ -27,7 +27,7 @@ app.get("/items/seed", async (req, res) => {
   await Item.deleteMany({});
   // Create a list of items into our database
   await Item.create(itemData);
-  res.redirect("/");
+  res.redirect("/items");
 });
 
 // Home route
@@ -40,10 +40,19 @@ app.get("/items/new", (req, res) => {
   res.render("New");
 });
 
+// Index route
+app.get("/items", (req, res) => {
+  Item.find({}, (error, allItems) => {
+    res.render("Index", {
+      items: allItems,
+    });
+  });
+});
+
 // Post route
-app.post("/items/", (req, res) => {
+app.post("/items", (req, res) => {
   Item.create(req.body, (error, item) => {
-    res.redirect("/");
+    res.redirect("/items");
   });
 });
 
@@ -109,7 +118,7 @@ app.get("/:animal", (req, res) => {
 // Delete route
 app.delete("/items/:id", (req, res) => {
   Item.findByIdAndRemove(req.params.id, (error, data) => {
-    res.redirect("/");
+    res.redirect("/items");
   });
 });
 

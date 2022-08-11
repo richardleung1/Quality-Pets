@@ -6,7 +6,7 @@ class Show extends React.Component {
     return (
       <html lang="en">
         <head>
-          <title>{item.name}</title>
+          <title>Quality Pets</title>
           <link rel="stylesheet" href="./css/style.css" />
           <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"

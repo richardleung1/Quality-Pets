@@ -2,10 +2,11 @@ const React = require("react");
 
 class Animal extends React.Component {
   render() {
+    const { items } = this.props;
     return (
       <html lang="en">
         <head>
-          <title>Categories</title>
+          <title>Quality Pets</title>
           <link rel="stylesheet" href="./css/style.css" />
           <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
@@ -16,9 +17,9 @@ class Animal extends React.Component {
         </head>
         <body>
           <div>
-            <h1>Categories</h1>
+            <h1>{items[0].animal} Categories</h1>
             <ul>
-              {this.props.items.map((item, index) => {
+              {items.map((item, index) => {
                 return (
                   <li>
                     <br />

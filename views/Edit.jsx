@@ -18,6 +18,7 @@ class Edit extends React.Component {
         <body>
           <div>
             <h1>Edit Item page</h1>
+            <form action={`/items/${item.id}?_method=PUT`} method="POST">
               <label for="name">Name:</label>
               <input type="text" name="name" className="form-control" />
               <label for="img">Img:</label>
@@ -50,8 +51,8 @@ class Edit extends React.Component {
               <input
                 type="submit"
                 name=""
-                value="Create Item"
-                className="btn btn-success"
+                value="Edit Item"
+                className="btn btn-secondary"
               />
             </form>
           </div>
