@@ -30,9 +30,9 @@ app.get("/items/seed", async (req, res) => {
   res.redirect("/");
 });
 
-// Index route
+// Home route
 app.get("/", (req, res) => {
-  res.render("Index");
+  res.render("Home");
 });
 
 // New route
