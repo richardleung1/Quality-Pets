@@ -106,6 +106,13 @@ app.get("/:animal", (req, res) => {
   });
 });
 
+// Delete route
+app.delete("/items/:id", (req, res) => {
+  Item.findByIdAndRemove(req.params.id, (error, data) => {
+    res.redirect("/");
+  });
+});
+
 app.listen(port, () => {
   console.log("listening on port", port);
 });
