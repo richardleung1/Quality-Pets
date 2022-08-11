@@ -24,30 +24,16 @@ class Category extends React.Component {
                     <li>
                     <a href={`/items/${item.id}`} className="btn btn-primary">
                      {item.name}
-                   </a> 
-                   <br />
-                   {item.price}
-                   <br />
-                   <a
-                     href={`/items/${item.id}/edit`}
-                     className="btn btn-secondary"
-                   >
-                     Edit item
                    </a>
-                   <form
-                     action={`/items/${item.id}?_method=DELETE`}
-                     method="POST"
-                   >
-                     <input
-                       type="submit"
-                       className="btn btn-danger"
-                       value="Delete item"
-                     />
-                   </form>
+                   <br />
+                   <img src={`${item.img}`} alt="" height={200}/>
                  </li>
                 );
               })}
             </ul>
+            <a href="/items/new" className="btn btn-success">
+                Add a New Item
+              </a>
           </div>
         </body>
       </html>

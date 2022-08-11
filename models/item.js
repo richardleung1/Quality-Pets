@@ -7,7 +7,6 @@ const itemSchema = new mongoose.Schema({
   category: { type: String, required: true },
   stock: { type: Number, required: true },
   animal: { type: String, required: true },
-  size: { type: String },
 });
 
 const Item = mongoose.model("Item", itemSchema);

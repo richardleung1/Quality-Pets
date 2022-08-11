@@ -22,7 +22,6 @@ class Show extends React.Component {
             <br />
             <ul>
               <li>Price: ${item.price}</li>
-              <li>Size: {item.size}</li>
               {(() => {
                 if (item.stock === 0) {
                   return <li>Stock: Out of Stock</li>;
@@ -31,6 +30,17 @@ class Show extends React.Component {
                 }
               })()}
             </ul>
+            <br />
+            <a href={`/items/${item.id}/edit`} className="btn btn-secondary">
+              Edit item
+            </a>
+            <form action={`/items/${item.id}?_method=DELETE`} method="POST">
+              <input
+                type="submit"
+                className="btn btn-danger"
+                value="Delete item"
+              />
+            </form>
           </div>
         </body>
       </html>

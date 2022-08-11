@@ -18,26 +18,40 @@ class Edit extends React.Component {
         <body>
           <div>
             <h1>Edit Item page</h1>
-            <form action={`/items/${item.id}?_method=PUT`} method="POST">
-              Name: <input type="text" name="name" />
-              <br />
-              Img: <input type="text" name="img" />
-              <br />
-              Price: <input type="number" name="price" />
-              <br />
-              Stock: <input type="number" name="stock" />
-              <br />
-              Size: <input type="text" name="size" />
-              <br />
-              Category: <input type="text" name="category" />
-              <br />
-              Animal: <input type="text" name="img" />
-              <br />
+              <label for="name">Name:</label>
+              <input type="text" name="name" className="form-control" />
+              <label for="img">Img:</label>
+              <input type="text" name="img" className="form-control" />
+              <label for="price">Price:</label>
+              <input
+                type="number"
+                name="price"
+                className="form-control"
+                step="0.01"
+                min={0}
+              />
+              <label for="stock">Stock:</label>
+              <input
+                type="number"
+                name="stock"
+                className="form-control"
+                min={0}
+              />
+              <label for="category">Category:</label>
+              <select class="form-control" name="category">
+                <option>Dry Food</option>
+                <option>Wet Food</option>
+              </select>
+              <label for="animal">Animal:</label>
+              <select class="form-control" name="animal">
+                <option>Cats</option>
+                <option>Dogs</option>
+              </select>
               <input
                 type="submit"
                 name=""
-                value="Edit Item"
-                className="btn btn-secondary"
+                value="Create Item"
+                className="btn btn-success"
               />
             </form>
           </div>
