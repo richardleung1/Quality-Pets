@@ -16,6 +16,28 @@ class Index extends React.Component {
           ></link>
         </head>
         <body>
+          <ul className="nav justify-content-center">
+            <li className="nav-item">
+              <a className="nav-link" href="/">
+                Home
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/items">
+                All Products
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/Cats">
+                Cats
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/Dogs">
+                Dogs
+              </a>
+            </li>
+          </ul>
           <div>
             <h1>All Items</h1>
             <ul>

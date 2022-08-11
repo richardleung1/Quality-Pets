@@ -15,6 +15,28 @@ class New extends React.Component {
           ></link>
         </head>
         <body>
+          <ul className="nav justify-content-center">
+            <li className="nav-item">
+              <a className="nav-link" href="/">
+                Home
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/items">
+                All Products
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/Cats">
+                Cats
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/Dogs">
+                Dogs
+              </a>
+            </li>
+          </ul>
           <div>
             <h1>New Item page</h1>
             <form action="/items" method="POST">
@@ -38,12 +60,12 @@ class New extends React.Component {
                 min={0}
               />
               <label for="category">Category:</label>
-              <select class="form-control" name="category">
+              <select className="form-control" name="category">
                 <option>Dry Food</option>
                 <option>Wet Food</option>
               </select>
               <label for="animal">Animal:</label>
-              <select class="form-control" name="animal">
+              <select className="form-control" name="animal">
                 <option>Cats</option>
                 <option>Dogs</option>
               </select>
