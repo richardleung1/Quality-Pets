@@ -15,28 +15,33 @@ class New extends React.Component {
           ></link>
         </head>
         <body>
-          <ul className="nav justify-content-center">
-            <li className="nav-item">
-              <a className="nav-link" href="/">
-                Home
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/items">
-                All Products
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/Cats">
-                Cats
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/Dogs">
-                Dogs
-              </a>
-            </li>
-          </ul>
+          <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <a className="navbar-brand" href="#">
+              Quality Pets
+            </a>
+            <ul className="navbar-nav mr-auto">
+              <li className="nav-item">
+                <a className="nav-link" href="/">
+                  Home
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/items">
+                  All Products
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/Cats">
+                  Cats
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/Dogs">
+                  Dogs
+                </a>
+              </li>
+            </ul>
+          </nav>
           <div>
             <h1>New Item page</h1>
             <form action="/items" method="POST">
@@ -58,6 +63,7 @@ class New extends React.Component {
                 name="stock"
                 className="form-control"
                 min={0}
+                value={0}
               />
               <label for="category">Category:</label>
               <select className="form-control" name="category">

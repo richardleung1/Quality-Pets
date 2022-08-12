@@ -16,42 +16,65 @@ class Show extends React.Component {
           ></link>
         </head>
         <body>
-          <ul className="nav justify-content-center">
-            <li className="nav-item">
-              <a className="nav-link" href="/">
-                Home
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/items">
-                All Products
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/Cats">
-                Cats
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/Dogs">
-                Dogs
-              </a>
-            </li>
-          </ul>
+          <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <a className="navbar-brand" href="#">
+              Quality Pets
+            </a>
+            <ul className="navbar-nav mr-auto">
+              <li className="nav-item">
+                <a className="nav-link" href="/">
+                  Home
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/items">
+                  All Products
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/Cats">
+                  Cats
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/Dogs">
+                  Dogs
+                </a>
+              </li>
+            </ul>
+          </nav>
           <div>
             <h2>{item.name}</h2>
             <img src={item.img} alt="" />
             <br />
-            <ul>
-              <li>Price: ${item.price}</li>
-              {(() => {
-                if (item.stock === 0) {
-                  return <li>Stock: Out of Stock</li>;
-                } else {
-                  return <li>Stock: {item.stock}</li>;
-                }
-              })()}
-            </ul>
+            <h3>Price: ${item.price}</h3>
+            {(() => {
+              if (item.stock === 0) {
+                return <h3>Out of Stock</h3>;
+              } else {
+                return (
+                  <div>
+                    <h3>Stock: {item.stock}</h3>
+                    <form>
+                      <label for="stock">Buy</label>
+                      <input
+                        type="number"
+                        name="buy"
+                        className="form-control"
+                        min={1}
+                        max={item.stock}
+                        value={1}
+                      />
+                      <input
+                        type="submit"
+                        value="Buy"
+                        className="btn btn-secondary"
+                      />
+                    </form>
+                  </div>
+                );
+              }
+            })()}
             <br />
             <a href={`/items/${item.id}/edit`} className="btn btn-secondary">
               Edit item

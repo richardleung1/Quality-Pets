@@ -16,35 +16,40 @@ class Edit extends React.Component {
           ></link>
         </head>
         <body>
-          <ul className="nav justify-content-center">
-            <li className="nav-item">
-              <a className="nav-link" href="/">
-                Home
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/items">
-                All Products
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/Cats">
-                Cats
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/Dogs">
-                Dogs
-              </a>
-            </li>
-          </ul>
+          <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <a className="navbar-brand" href="#">
+              Quality Pets
+            </a>
+            <ul className="navbar-nav mr-auto">
+              <li className="nav-item">
+                <a className="nav-link" href="/">
+                  Home
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/items">
+                  All Products
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/Cats">
+                  Cats
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/Dogs">
+                  Dogs
+                </a>
+              </li>
+            </ul>
+          </nav>
           <div>
             <h1>Edit Item page</h1>
             <form action={`/items/${item.id}?_method=PUT`} method="POST">
               <label for="name">Name:</label>
-              <input type="text" name="name" className="form-control" />
+              <input type="text" name="name" className="form-control" value={item.name} />
               <label for="img">Img:</label>
-              <input type="text" name="img" className="form-control" />
+              <input type="text" name="img" className="form-control" value={item.img}/>
               <label for="price">Price:</label>
               <input
                 type="number"
@@ -52,6 +57,7 @@ class Edit extends React.Component {
                 className="form-control"
                 step="0.01"
                 min={0}
+                value={item.price}
               />
               <label for="stock">Stock:</label>
               <input
@@ -59,6 +65,7 @@ class Edit extends React.Component {
                 name="stock"
                 className="form-control"
                 min={0}
+                value={item.stock}
               />
               <label for="category">Category:</label>
               <select className="form-control" name="category">

@@ -16,28 +16,33 @@ class Category extends React.Component {
           ></link>
         </head>
         <body>
-          <ul className="nav justify-content-center">
-            <li className="nav-item">
-              <a className="nav-link" href="/">
-                Home
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/items">
-                All Products
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/Cats">
-                Cats
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/Dogs">
-                Dogs
-              </a>
-            </li>
-          </ul>
+          <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <a className="navbar-brand" href="#">
+              Quality Pets
+            </a>
+            <ul className="navbar-nav mr-auto">
+              <li className="nav-item">
+                <a className="nav-link" href="/">
+                  Home
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/items">
+                  All Products
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/Cats">
+                  Cats
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/Dogs">
+                  Dogs
+                </a>
+              </li>
+            </ul>
+          </nav>
           <div>
             <h1>
               {items[0].animal} {items[0].category}

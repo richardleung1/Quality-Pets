@@ -16,30 +16,35 @@ class Index extends React.Component {
           ></link>
         </head>
         <body>
-          <ul className="nav justify-content-center">
-            <li className="nav-item">
-              <a className="nav-link" href="/">
-                Home
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/items">
-                All Products
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/Cats">
-                Cats
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/Dogs">
-                Dogs
-              </a>
-            </li>
-          </ul>
+          <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <a className="navbar-brand" href="#">
+              Quality Pets
+            </a>
+            <ul className="navbar-nav mr-auto">
+              <li className="nav-item">
+                <a className="nav-link" href="/">
+                  Home
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/items">
+                  All Products
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/Cats">
+                  Cats
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/Dogs">
+                  Dogs
+                </a>
+              </li>
+            </ul>
+          </nav>
           <div>
-            <h1>All Items</h1>
+            <h1>All Products</h1>
             <ul>
               {items.map((item, index) => {
                 return (
@@ -49,7 +54,7 @@ class Index extends React.Component {
                     </a>
                     <br />
                     <a href={`/items/${item.id}`}>
-                      <img src={`${item.img}`} alt="" height={200} />
+                      <img src={`${item.img}`} alt="" />
                     </a>
                   </li>
                 );
