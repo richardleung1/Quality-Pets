@@ -1,6 +1,25 @@
 img {
-  height: 200px;
+  height: 300px;
+  object-fit: contain;
 }
 ul {
   list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.card {
+  width: 15em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 5px;
+  margin: 5px;
+}
+a {
+  margin: 5px;
+}
+.home {
+  height: 400px;
+  width: auto;
 }

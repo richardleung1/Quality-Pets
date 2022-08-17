@@ -1,6 +1,6 @@
 # Quality-Pets
 
-Quality Pets is a pet supplies store.
+Quality Pets is a pet supplies store. Users can buy products for cats and dogs. Products are sorted by animal and categories.
 
 ## Getting Started
 
@@ -8,7 +8,7 @@ Quality Pets is a pet supplies store.
 
 #### Deployed on Heroku
 
-User will require a browser to open the Heroku Live Link.
+User will require a browser to open the [Heroku Live Link](https://quality-pets.herokuapp.com/).
 
 #### For local machine
 
@@ -41,8 +41,9 @@ Type `nodemon` or `node server.js` in terminal to run server
 
    VERB 		 | 		  PATH 		 |  	 DESCRIPTION
 ------------ | ------------- | -------------------
-GET | /api/v1/ | index of categories |
-GET | /api/v1/:category | index of items in category  |
+GET | /api/v1/ | home page |
+GET | /api/v1/:animal | index of categories of animal |
+GET | /api/v1/:animal/:category | index of items in category  |
 GET | /api/v1/item/:id | show page for selected item  |
 GET | /api/v1/item/new | page to add new item |
 POST | /api/v1/item | add a item |

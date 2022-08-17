@@ -16,8 +16,13 @@ class Show extends React.Component {
           ></link>
         </head>
         <body>
+          <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+            crossOrigin="anonymous"
+          ></script>
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <a className="navbar-brand" href="#">
+            <a className="navbar-brand" href="/">
               Quality Pets
             </a>
             <ul className="navbar-nav mr-auto">
@@ -45,7 +50,7 @@ class Show extends React.Component {
           </nav>
           <div>
             <h2>{item.name}</h2>
-            <img src={item.img} alt="" />
+            <img className='show-img' src={item.img} alt="" height={500}/>
             <br />
             <h3>Price: ${item.price}</h3>
             {(() => {
@@ -56,7 +61,7 @@ class Show extends React.Component {
                   <div>
                     <h3>Stock: {item.stock}</h3>
                     <form>
-                      <label for="stock">Buy</label>
+                      <label htmlFor="stock">Buy</label>
                       <input
                         type="number"
                         name="buy"

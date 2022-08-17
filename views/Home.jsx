@@ -15,8 +15,13 @@ class Home extends React.Component {
           ></link>
         </head>
         <body>
+          <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+            crossOrigin="anonymous"
+          ></script>
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <a className="navbar-brand" href="#">
+            <a className="navbar-brand" href="/">
               Quality Pets
             </a>
             <ul className="navbar-nav mr-auto">
@@ -46,6 +51,7 @@ class Home extends React.Component {
             <h1>Welcome to Quality Pets</h1>
             <a href="/Dogs">
               <img
+                className="home"
                 src="https://www.princeton.edu/sites/default/files/styles/half_2x/public/images/2022/02/KOA_Nassau_2697x1517.jpg?itok=iQEwihUn"
                 alt="Dogs"
                 width="300"
@@ -53,6 +59,7 @@ class Home extends React.Component {
             </a>
             <a href="/Cats">
               <img
+                className="home"
                 src="https://images.theconversation.com/files/443350/original/file-20220131-15-1ndq1m6.jpg?ixlib=rb-1.1.0&rect=0%2C0%2C3354%2C2464&q=45&auto=format&w=926&fit=clip"
                 alt="Cats"
                 width="300"

@@ -3,6 +3,8 @@ const React = require("react");
 class Category extends React.Component {
   render() {
     const { items } = this.props;
+    const { animal } = this.props;
+    const { category } = this.props;
     return (
       <html lang="en">
         <head>
@@ -16,8 +18,13 @@ class Category extends React.Component {
           ></link>
         </head>
         <body>
+          <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+            crossOrigin="anonymous"
+          ></script>
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <a className="navbar-brand" href="#">
+            <a className="navbar-brand" href="/">
               Quality Pets
             </a>
             <ul className="navbar-nav mr-auto">
@@ -45,17 +52,35 @@ class Category extends React.Component {
           </nav>
           <div>
             <h1>
-              {items[0].animal} {items[0].category}
+              {animal} {category}
             </h1>
-            <ul>
+            <ul style={{listStyle: 'none', display: 'flex', flexWrap: 'wrap'}}>
               {items.map((item, index) => {
                 return (
                   <li>
-                    <a href={`/items/${item.id}`} className="btn btn-primary">
-                      {item.name}
-                    </a>
+                    <div className="card"  style={{ width: '15em', textOverflow: 'ellipsis', overflow: 'hidden', padding: '5px', margin: '5px'}}>
+                      <a href={`/items/${item.id}`}>
+                        <img
+                          style={{ height: "300px", width: "auto" }}
+                          src={`${item.img}`}
+                          className="card-img-top"
+                          alt={item.name}
+                        />
+                      </a>
+                      <div className="card-body">
+                        <a href={`/items/${item.id}`}>
+                          <h5 className="card-title">{item.name}</h5>
+                        </a>
+                        <p className="card-text">{item.price}</p>
+                        <a
+                          href={`/items/${item.id}`}
+                          className="btn btn-primary"
+                        >
+                          More Details
+                        </a>
+                      </div>
+                    </div>
                     <br />
-                    <img src={`${item.img}`} alt="" height={200} />
                   </li>
                 );
               })}

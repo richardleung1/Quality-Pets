@@ -16,8 +16,13 @@ class Index extends React.Component {
           ></link>
         </head>
         <body>
+          <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+            crossOrigin="anonymous"
+          ></script>
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <a className="navbar-brand" href="#">
+            <a className="navbar-brand" href="/">
               Quality Pets
             </a>
             <ul className="navbar-nav mr-auto">
@@ -49,13 +54,28 @@ class Index extends React.Component {
               {items.map((item, index) => {
                 return (
                   <li>
-                    <a href={`/items/${item.id}`} className="btn btn-primary">
-                      {item.name}
-                    </a>
+                    <div className="card">
+                      <a href={`/items/${item.id}`}>
+                        <img
+                          src={`${item.img}`}
+                          className="card-img-top"
+                          alt={item.name}
+                        />
+                      </a>
+                      <div className="card-body">
+                        <a href={`/items/${item.id}`}>
+                          <h5 className="card-title">{item.name}</h5>
+                        </a>
+                        <p className="card-text">{item.price}</p>
+                        <a
+                          href={`/items/${item.id}`}
+                          className="btn btn-primary"
+                        >
+                          More Details
+                        </a>
+                      </div>
+                    </div>
                     <br />
-                    <a href={`/items/${item.id}`}>
-                      <img src={`${item.img}`} alt="" />
-                    </a>
                   </li>
                 );
               })}

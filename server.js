@@ -101,6 +101,8 @@ app.get("/:animal/:category", (req, res) => {
     (error, foundItems) => {
       res.render("Category", {
         items: foundItems,
+        animal: req.params.animal,
+        category: req.params.category,
       });
     }
   );
@@ -108,10 +110,8 @@ app.get("/:animal/:category", (req, res) => {
 
 // Animal route
 app.get("/:animal", (req, res) => {
-  Item.find({ animal: req.params.animal }, (error, foundItems) => {
-    res.render("Animal", {
-      items: foundItems,
-    });
+  res.render("Animal", {
+    animal: req.params.animal,
   });
 });
 

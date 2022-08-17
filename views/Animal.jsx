@@ -2,7 +2,8 @@ const React = require("react");
 
 class Animal extends React.Component {
   render() {
-    const { items } = this.props;
+    const { animal } = this.props;
+    const categories = ["Food", "Treats", "Toys"];
     return (
       <html lang="en">
         <head>
@@ -16,8 +17,9 @@ class Animal extends React.Component {
           ></link>
         </head>
         <body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <a className="navbar-brand" href="#">
+            <a className="navbar-brand" href="/">
               Quality Pets
             </a>
             <ul className="navbar-nav mr-auto">
@@ -44,17 +46,18 @@ class Animal extends React.Component {
             </ul>
           </nav>
           <div>
+            
             <h1>Categories</h1>
             <ul>
-              {items.map((item, index) => {
+              {categories.map((category, index) => {
                 return (
                   <li>
                     <br />
                     <a
-                      href={`/${item.animal}/${item.category}`}
+                      href={`${animal}/${category}`}
                       className="btn btn-primary"
                     >
-                      {item.category}
+                      {category}
                     </a>
                     <br />
                   </li>
