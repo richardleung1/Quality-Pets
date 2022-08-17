@@ -2,6 +2,10 @@
 
 Quality Pets is a pet supplies store. Users can buy products for cats and dogs. Products are sorted by animal and categories.
 
+## Introduction
+
+[![Quality Pet Introduction](https://img.youtube.com/vi/TeZOfSC7f0o/hqdefault.jpg)](https://youtu.be/TeZOfSC7f0o)
+
 ## Getting Started
 
 ### Prerequisites

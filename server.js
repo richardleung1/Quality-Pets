@@ -22,13 +22,13 @@ app.set("view engine", "jsx");
 app.engine("jsx", require("express-react-views").createEngine());
 
 // Seed route
-app.get("/items/seed", async (req, res) => {
-  //Clear database
-  await Item.deleteMany({});
-  // Create a list of items into our database
-  await Item.create(itemData);
-  res.redirect("/items");
-});
+// app.get("/items/seed", async (req, res) => {
+//   //Clear database
+//   await Item.deleteMany({});
+//   // Create a list of items into our database
+//   await Item.create(itemData);
+//   res.redirect("/items");
+// });
 
 // Home route
 app.get("/", (req, res) => {
