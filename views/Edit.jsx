@@ -89,8 +89,7 @@ class Edit extends React.Component {
               </select>
               <label htmlFor="category">Category:</label>
               <select className="form-control" name="category">
-                <option>Dry Food</option>
-                <option>Wet Food</option>
+                <option>Food</option>
                 <option>Treats</option>
                 <option>Toys</option>
               </select>
